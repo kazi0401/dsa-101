@@ -1,5 +1,5 @@
 import unittest
-from stack_problems import is_balanced
+from balanced_parentheses import is_balanced
 
 
 class TestBalancedParentheses(unittest.TestCase):

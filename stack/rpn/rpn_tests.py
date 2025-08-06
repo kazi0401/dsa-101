@@ -1,5 +1,5 @@
 import unittest
-from stack_problems import eval_rpn
+from rpn import eval_rpn
 
 class TestEvaluateRPN(unittest.TestCase):
 

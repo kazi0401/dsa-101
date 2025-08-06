@@ -16,8 +16,6 @@ class Stack:
 
 
 
-# Solved xyz
-
             
 
 

@@ -1,5 +1,5 @@
 
-from stack_problems import stack_reverse
+from reverse_string import stack_reverse
 import unittest
 
 
