@@ -1,0 +1,11 @@
+
+Balanced Parentheses
+
+Write a function to check if a string of brackets is balanced.
+Return True if every opening bracket has a closing one, in correct order.
+
+    ([]){} -> True  
+    ([)] -> False  
+    (((  -> False
+
+Name the function is_balanced.
