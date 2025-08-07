@@ -12,6 +12,8 @@ class Stack:
 
     def push(self): 
         return 0
+    
+
 
 
 

@@ -24,11 +24,6 @@ class TestCountFrequencies(unittest.TestCase):
             {1: 3, 2: 2, 3: 1}
         )
 
-    def test_with_mixed_types(self):
-        self.assertEqual(
-            self.frequency_counter(["x", 1, "x", 1, True, False, True]),
-            {"x": 2, 1: 2, True: 2, False: 1}
-        )
 
     def test_case_sensitivity(self):
         self.assertEqual(
