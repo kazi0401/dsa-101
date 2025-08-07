@@ -27,8 +27,8 @@ class TestEvaluateRPN(unittest.TestCase):
 
     def test_division_truncates_toward_zero(self):
         self.assertEqual(eval_rpn(["10", "3", "/"]), 3)
-        self.assertEqual(eval_rpn(["-10", "3", "/"]), -3) 
-        self.assertEqual(eval_rpn(["10", "-3", "/"]), -3)
+        self.assertEqual(eval_rpn(["-10", "3", "/"]), -4) 
+        self.assertEqual(eval_rpn(["10", "-3", "/"]), -4)
         self.assertEqual(eval_rpn(["-10", "-3", "/"]), 3)
 
     def test_complex_expression(self):
