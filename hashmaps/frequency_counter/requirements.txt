@@ -1,0 +1,7 @@
+
+Frequency Counter
+
+Write a function that takes a list and returns a dictionary of counts.
+The result should be a dictionary where
+    Each key is a unique element of the list.
+    Each value refers to how many times that key appears in the list.
