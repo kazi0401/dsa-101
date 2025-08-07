@@ -1,0 +1,96 @@
+
+Implement your own hashmap!
+    Background:
+        Hashmaps provide O(1) look-up by hashing keys.
+        Key -> Hash Function -> Index 
+
+        Hashing is the process of converting the key into a bucket index.
+            A good hash function should be
+                deterministic 
+                    each input should produce the same bucket index every time!
+                uniformly distributed 
+                    every bucket index is equally as likely
+                collision-minimizing 
+                    Collisions (where two different inputs map to the same index)
+                    should be infrequent, to maintain efficiency + avoid resizing.
+
+            Some ideas for a hash function (from simplest to hardest):
+                1) String Hashing
+                    Convert your key into a string 
+                    Add up the ASCII values for all characters in the string
+                    Modulo the sum by the number of buckets in the hashmap
+                2) Polynomial Rolling Hash 
+                    Start with a hash value of 0.
+                    For each character in the input string:
+                        Convert the character to its ASCII value.
+                        Multiply the current hash value by a constant base (use the number 31).
+                        Add the ASCII value of the character to the result.
+                    Modulo the result by the number of buckets in the hashmap
+                3) DJB2 Hash
+                    Start with a hash value of 5381.
+                    For each character in the string:
+                        Multiply the current hash value by 33 (magic number).
+                        Add the ASCII value of the current character to the result.
+                    Once the whole string is processed, take the final result modulo the number of buckets.
+                
+    Requirements:
+        __init__(self, capacity):
+            Initializes the code with a capacity. 
+            
+        put(key, value):
+            Add or update a key with the given value.
+            If a collision occurs, resize the entire hashmap and rehash all keys.
+            Assume that key-value pairs wont be added past the limits of capacity.
+        
+        get(key):
+            Get the value of the key.
+            Returns none if the key does not exist.
+
+        remove(key):
+            Remove the key and its associated value from the hashmap 
+            Do nothing if the key did not already exist.
+        
+        resize():
+            Double the capacity of hashmap, rehash all keys.
+        
+        size():
+            Return the number of key-value pairs in the hashmap
+        
+        capacity():
+            Return the capacity of the hashmap.
+
+        load_factor():
+            Return  1 - (size / capacity). 
+            The higher the utilization, the more space is being wasted.
+
+    Challenge Methods!
+        These methods are called dunder methods. They allow your Hashmap
+        to integrate seamlessly with Python, like a dictionary would.
+        Here are the function headers that define that behavior.
+
+        def __getitem__(self, key: any) -> any:
+            # myHashMap[key]
+        
+        def __setitem__(self, key: any, value: any) -> None:
+            # myHashMap[key] = value
+        
+        def __contains__(self, key: any) -> bool:
+            # key in myHashMap
+
+    
+    Collision Handling:
+        Instead of resizing at every collision...
+            1) Implement Seperate Chaining
+            2) Implement Linear Probing
+
+
+    Hints & Things to Think About:
+        Design the class so hash functions & collision-handling can be easily swapped
+        The tests I made are not comprehensive! 
+        Remember that each bucket will contain the key & the value. 
+
+
+
+
+
+        
