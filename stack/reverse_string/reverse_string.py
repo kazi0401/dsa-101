@@ -1,3 +1,3 @@
-
 def stack_reverse(string: str) -> str:
-    pass
+    reversed = []
+    for i in range(len())
