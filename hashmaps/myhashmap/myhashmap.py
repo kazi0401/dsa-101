@@ -1,38 +1,51 @@
 # Your implementation here
 class MyHashMap:
     #INSANELY CONFUSED
-    def __init__(self):
-        self.capacity = 10
+    def __init__(self, capacity: int):
+        self.data = [None] * capacity # list[tuple[any, any]]
+        self.capacity = capacity
+        self.sz = 0
+    
     def put(self, key, value):
-        self[key] = value
-        if self[key] is not None:
-            self.capacity *= 2
-            self.key += 1
+        self.sz += 1
+    
     def get(self, key):
-        if self.key not in self:
-            pass
-        else:
-            return self.key
+        pass
+    
     def remove(self, key):
-        if self.key not in self:
-            pass
-        else:
-            del(self.key)
-            del(self[key])
-    def resize(self):
-        self.capacity *= 2
+        index = hash(key) % self.capacity
 
+        if self.data[index] == None:
+            return 
+        else:
+            self.data[index] = None
+            self.sz -= 1
+    
+    def resize(self):  # O(n)
+        newCapacity = self.capacity * 2
+        newData = [None] * newCapacity
+
+        for item in self.data:
+            if item != None:
+                key, value = item 
+                newIndex = hash(key) % newCapacity
+                newData[newIndex] = (key, value)
+        
+        self.data = newData 
+        self.capacity = newCapacity
+
+
+    def hash(self, key):
+        pass 
+    
     def size(self):
-        self.count = 0
-        for self.keys() in self:
-            self.count += 1
-        return self.count
+        return self.sz
 
     def capacity(self):
-        return self.capacity_val
+        pass
 
     def load_factor(self):
-        return 1 - (self.count / self.capacity_val)
+        pass
 
 if __name__ == '__main__':
     # Use this for any experiments you want to run
